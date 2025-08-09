@@ -1,10 +1,10 @@
-console.log("Hello World");
+const express = require('express');
+const path = require('path');
 
-let express = require('express');
-let app = express();
+const app = express();
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'index.html'));
-  });
-  
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
 module.exports = app;
