@@ -5,6 +5,14 @@ const path = require('path');
 
 const app = express();
 
+app.get('/now', function(req, res, next) {
+    req.time = new Date().toString();
+    next();
+  }, function(req, res) {
+    res.send(`Time: ${req.time}`);
+  });
+  
+
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.path} - ${req.ip}`);
     next();
